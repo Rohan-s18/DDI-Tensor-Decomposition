@@ -14,7 +14,10 @@ import pandas as pd
 
 #  Helper function to retrieve the data and store it into a dataframe
 def create_tensor():
-    pass
+    file = ""
+    df = pd.read_csv(file)
+    
+
 
 
 #  Helper function to get the 2-norm similarity between the 2 vectors
