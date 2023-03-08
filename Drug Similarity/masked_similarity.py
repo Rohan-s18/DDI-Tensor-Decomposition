@@ -1,6 +1,6 @@
 """
 Author: Rohan Singh
-Python Module for finding creating a similarity matrix between two vectors
+Python Module for finding creating a similarity matrix between two matrices
 """
 
 #  Imports
