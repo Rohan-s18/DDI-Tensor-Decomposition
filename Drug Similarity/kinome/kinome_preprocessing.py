@@ -11,26 +11,37 @@ import random
 
 
 #  Helper function to get the drug names from the ddi-tensor
-def get_ddi_names():
-    pass
+def get_ddi_names(filepath):
+    filepath = ""
+    df = pd.read_csv(filepath)
+    names = df["names"]
+    return names.to_numpy()
 
 
 #  Helper function to get the drug names from the kinome dataset
-def get_kinome_names():
-    pass
+def get_kinome_names(filepath):
+    df = pd.read_csv(filepath)
+    names = df["names"]
+    return names.to_numpy()
 
 
 #  helper function to get the intersection between the kinome names and the ddi names for drugs
 def get_intersection_drugs(db1, db2):
-    pass
+    interesctions = []
+    for i in range(0, len(db1),1):
+        drug = db1[i]
+        for j in range(0,len(db2),1):
+            if(drug==db2[j])
+            interesctions.append(drug)
+    return np.array(interesctions)
 
 
 
 #  Main method
 def main():
     
-    ddi = get_ddi_names()
-    kinome = get_kinome_names()
+    ddi = get_ddi_names("")
+    kinome = get_kinome_names("")
 
     intersection = get_intersection_drugs(ddi,kinome)
 
