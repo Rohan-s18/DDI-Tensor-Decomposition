@@ -39,8 +39,8 @@ def get_intersection_drugs(db1, db2):
 #  Main method
 def main():
     
-    ddi = get_ddi_names("/Users/rohansingh/github_repos/DDI-Tensor-Decomposition/Drug Similarity/kinome/base_dictionary.csv")
-    kinome = get_kinome_names("/Users/rohansingh/github_repos/DDI-Tensor-Decomposition/Drug Similarity/kinome/kinome_s1.csv")
+    ddi = get_ddi_names("/Users/rohansingh/github_repos/DDI-Tensor-Decomposition/Drug Similarity/growth inhibition/base_dictionary.csv")
+    kinome = get_kinome_names("/Users/rohansingh/github_repos/DDI-Tensor-Decomposition/Drug Similarity/growth inhibition/IC50.csv")
 
     intersection = get_intersection_drugs(ddi,kinome)
 
