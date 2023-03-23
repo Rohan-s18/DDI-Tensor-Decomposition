@@ -20,7 +20,7 @@ def get_ddi_names(filepath):
 #  Helper function to get the drug names from the kinome dataset
 def get_kinome_names(filepath):
     df = pd.read_csv(filepath)
-    names = df["Name"]
+    names = df["PANEL_NAME"]
     return names.to_numpy()
 
 
@@ -43,6 +43,8 @@ def main():
     kinome = get_kinome_names("/Users/rohansingh/github_repos/DDI-Tensor-Decomposition/Drug Similarity/growth inhibition/IC50.csv")
 
     intersection = get_intersection_drugs(ddi,kinome)
+
+    print(kinome)
 
     print("The intersection of the two drug banks is: ",len(intersection))
 
