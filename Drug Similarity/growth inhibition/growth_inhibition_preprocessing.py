@@ -26,13 +26,10 @@ def get_kinome_names(filepath):
 
 #  helper function to get the intersection between the kinome names and the ddi names for drugs
 def get_intersection_drugs(db1, db2):
-    interesctions = []
-    for i in range(0, len(db1),1):
-        drug = db1[i]
-        for j in range(0,len(db2),1):
-            if(drug==db2[j]):
-                interesctions.append(drug)
-    return np.array(interesctions)
+    db1_set  = set(db1)
+    db2_set = set(db2)
+    intersections = db1_set.intersection(db2_set)
+    return np.array(intersections)
 
 
 
@@ -44,9 +41,9 @@ def main():
 
     intersection = get_intersection_drugs(ddi,kinome)
 
-    print(kinome)
+    #print(kinome)
 
-    print("The intersection of the two drug banks is: ",len(intersection))
+    print("The intersection of the two drug banks is: ",intersection)
 
 
 
