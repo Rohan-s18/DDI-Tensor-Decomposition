@@ -7,6 +7,7 @@ Data Preprocessing script
 #  Imports 
 import pandas as pd
 import numpy as np
+from pubchempy import *
 import random
 
 
@@ -15,6 +16,13 @@ def get_ddi_names(filepath):
     df = pd.read_csv(filepath)
     names = df["name"]
     return names.to_numpy()
+
+
+#  Helper function to get the drug cid from the ddi-tensor
+def get_ddi_cids(filepath):
+    df = pd.read_csv(filepath)
+    cid = df["cid"]
+    return cid.to_numpy()
 
 
 #  Helper function to get the drug names from the kinome dataset
@@ -32,6 +40,16 @@ def get_intersection_drugs(db1, db2):
     return np.array(intersections)
 
 
+#  Helper function to get the properties for the ddi drugs to get
+def temp(db):
+    drug = db[0]
+    c = Compound.from_cid(int(drug))
+    for r in c.record:
+        print(r)
+
+    print("\n")
+
+
 
 #  Main method
 def main():
@@ -45,6 +63,10 @@ def main():
 
     print("The intersection of the two drug banks is: ",intersection)
 
+    #Checking the cid properties
+    cid = get_ddi_cids("/Users/rohansingh/github_repos/DDI-Tensor-Decomposition/Drug Similarity/growth inhibition/base_dictionary.csv")
+
+    temp(cid)
 
 
 if __name__ == "__main__":
