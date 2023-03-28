@@ -50,6 +50,15 @@ def temp(db):
     print("\n")
 
 
+#  Helper function to map properties for similarity matrix construction
+def map_props(db):
+    drug = db[0]
+    c = Compound.from_cid(int(drug))
+    
+    props = c.record["props"]
+    print(props)
+
+
 
 #  Main method
 def main():
@@ -67,6 +76,8 @@ def main():
     cid = get_ddi_cids("/Users/rohansingh/github_repos/DDI-Tensor-Decomposition/Drug Similarity/growth inhibition/base_dictionary.csv")
 
     temp(cid)
+
+    map_props(cid)
 
 
 if __name__ == "__main__":
