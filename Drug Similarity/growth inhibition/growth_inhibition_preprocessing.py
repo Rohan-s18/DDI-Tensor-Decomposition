@@ -58,6 +58,13 @@ def map_props(db):
     props = c.record["props"]
     print(props)
 
+#  Helper function to map the dictionary properties
+def get_dictionary(db):
+    drug = db[0]
+    c = Compound.from_cid(int(drug))
+    
+    print(c.to_dict(properties=["atoms","bonds"]))
+    
 
 
 #  Main method
@@ -77,7 +84,7 @@ def main():
 
     temp(cid)
 
-    map_props(cid)
+    get_dictionary(cid)
 
 
 if __name__ == "__main__":
