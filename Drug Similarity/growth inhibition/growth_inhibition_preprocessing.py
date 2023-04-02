@@ -63,7 +63,7 @@ def get_dictionary(db):
     drug = db[0]
     c = Compound.from_cid(int(drug))
     
-    print(c.to_dict(properties=["atoms","bonds"]))
+    print(c.to_dict().keys())
     
 
 
